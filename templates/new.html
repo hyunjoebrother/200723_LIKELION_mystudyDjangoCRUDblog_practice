@@ -1,0 +1,19 @@
+<h1>new</h1>
+
+<!-- 새 글 작성 페이지 -->
+
+<form action="{% url 'create' %}" method="POST">
+    <!-- 입력하는 걸 POST 방식으로 보낸다고 정의 -->
+    <!-- create는 아직 페이지가 없고 처리만 해둔다 -->
+
+    {% csrf_token %}
+    <!-- csrf 공격 방지용 -->
+
+    <h3>제목</h3>
+    <input type="text" name="title">
+
+    <h3>내용</h3>
+    <textarea name="body" cols="30" rows="10"></textarea>
+    <input type="submit" value="작성완료">
+    <!-- type는 지정한 형태로 입력 받겠다, value는 실제 적혀있는 값 -->
+</form>

@@ -1,0 +1,21 @@
+<h1>blog</h1>
+
+<!-- blogs 가 객체 -->
+<!-- main 페이지에서 admin에 저장한 data를 가져오자 -->
+<!-- model에 만든 class를 views에서 class의 객체를 가져오면 data를 다룰 수 있다 -->
+
+{% for blog in blogs.all %}
+    <a href="{% url 'new' %}">새 글쓰기</a> <!-- 링크 추가 -->
+
+    <h1>
+        <p>{{blog.id}}</p>
+        <a href="{% url 'detail' blog.id %}">
+            제목: {{blog.title}}
+        </a>
+    </h1>
+
+    <p>{{blog.created_at}}</p>
+    <p>{{blog.updated_at}}</p>
+    <p>{{blog.body}}</p>
+
+{% endfor%}

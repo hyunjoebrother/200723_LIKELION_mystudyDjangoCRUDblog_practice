@@ -1,0 +1,15 @@
+<h1>edit (Update)</h1>
+
+<!-- new처럼 입력 form을 만들어준다 -->
+<!-- update 함수 ON -->
+
+<form action="{% url 'update' blog.id %}" method="POST">
+    {% csrf_token %}
+    <h3>제목</h3>
+    <input type="text" name="title" value="{{blog.title}}">
+    <h3>내용</h3>
+    <textarea name="body" id="" cols="30" rows="10">{{blog.body}}</textarea>
+    <input type="submit" value="수정완료">
+</form>
+
+<a href="{% url 'detail' blog.id %}">돌아가기</a>
